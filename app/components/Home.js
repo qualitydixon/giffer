@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react'
 
-function Home(props) {
+export default function Home(props) {
   return (
     <div className='homeContainer'>
       <div className='home'>
-        <h1> {'Enter a Movie Title'} </h1>
+        <h1> {'Search your favorite gifs!'} </h1>
         <form onSubmit={props.onSubmitSearchString}>
           <div className='form-group' id='inputBox'>
             <input
               className='form-control'
-              placeholder='Star Wars'
+              placeholder='cats'
               type='text'
               onChange={props.onUpdateSearchString}
               value={props.searchString}
@@ -29,4 +29,3 @@ Home.propTypes = {
   onUpdateSearchString: PropTypes.func.isRequired,
   searchString: PropTypes.string.isRequired,
 }
-module.exports = Home

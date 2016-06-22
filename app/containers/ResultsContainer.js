@@ -1,13 +1,13 @@
 import React, { PropTypes, Component } from 'react'
 import Results from '../components/Results'
-import { getMovies, getDetails } from '../utils/api'
+import { getGifs, getDetails } from '../utils/api'
 
 export default class ResultsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
       isLoading: true,
-      movieData: {},
+      gifData: {},
       modalOpen: false,
       modalData: {},
     }
@@ -16,11 +16,13 @@ export default class ResultsContainer extends Component {
     this.makeRequest(this.props.routeParams.searchString)
   }
   makeRequest(searchString) {
-    getMovies(searchString).then((data) => {
+    console.log('Here!')
+    getGifs(searchString).then((data) => {
       this.setState({
-        movieData: data,
+        gifData: data,
         isLoading: false,
       })
+      console.log(data)
     })
   }
   makeDetailsRequest(movie) {
@@ -42,7 +44,7 @@ export default class ResultsContainer extends Component {
         <Results
           isLoading={this.state.isLoading}
           searchString={this.props.routeParams.searchString}
-          movieData={this.state.movieData}
+          gifData={this.state.gifData}
           makeDetailsRequest={(movie) => this.makeDetailsRequest(movie)}
           modalOpen={this.state.modalOpen}
           closeModal={() => this.closeModal()}

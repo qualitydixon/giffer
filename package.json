@@ -1,7 +1,7 @@
 {
-  "name": "movie-info",
+  "name": "giffer",
   "version": "1.0.0",
-  "description": "Movies!",
+  "description": "An implementation of the giphy api.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",

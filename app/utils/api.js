@@ -1,14 +1,16 @@
 import axios from 'axios'
 
-const baseURL = 'https://www.omdbapi.com/?s='
+const baseURL = 'http://api.giphy.com/v1/gifs/search?q='
 const detailURL = 'https://www.omdbapi.com/?i='
-const trailURL = '&y=&plot=short&r=json'
-const page2 = '&page=2'
+const trailURL = '&api_key=dc6zaTOxFJmzC'
 
-function getMovies(searchString) {
+function getGifs(searchString) {
+  console.log('Now Here!')
   return axios.get(baseURL + searchString + trailURL)
-          .then((movies1) => axios.get(baseURL + searchString + trailURL + page2)
-            .then((movies2) => movies1.data.Search.concat(movies2.data.Search)))
+          .then(gifs => gifs.data.data)
+          .catch((error) => {
+            console.log(error)
+          })
 }
 
 function getDetails(id) {
@@ -16,6 +18,6 @@ function getDetails(id) {
           .then((movie) => movie.data)
 }
 module.exports = {
-  getMovies,
+  getGifs,
   getDetails,
 }

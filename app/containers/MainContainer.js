@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react'
-import Navigation from '../components/Navigation'
+import NavigationContainer from './NavigationContainer'
 require('../stylesheets/main.less')
 
 function MainContainer(props) {
   return (
     <div>
-      <Navigation />
+      <NavigationContainer />
       {props.children}
     </div>
   )

@@ -25,18 +25,14 @@ const addSpace = {
 function ListItem(props) {
   const animationDelay = `${2 + (props.idx * 10) / 100}s`
   return (
-    <li style={{ animationDelay }} className='card' onClick={props.makeDetailsRequest}>
-      <img alt={'Poster'} src={props.movie.Poster.replace('http', 'https')} className='listPoster' />
-      <div className='info'>
-        <p> {props.movie.Title} </p>
-      </div>
+    <li style={{ animationDelay }} className='card'>
+      <img alt={'Gif'} src={props.gif.images.downsized_still.url} />
     </li>
   )
 }
 
 ListItem.propTypes = {
-  makeDetailsRequest: func.isRequired,
-  movie: object.isRequired,
+  gif: object.isRequired,
   idx: number.isRequired,
 }
 
@@ -67,10 +63,9 @@ function Results(props) {
     ? <div className='loading'> {'Loading'} </div>
     : <div>
       <ul className='list'>
-        {props.movieData.map((movie, idx) =>
+        {props.gifData.map((gif, idx) =>
           <ListItem
-            key={movie.imdbID} idx={idx} movie={movie}
-            makeDetailsRequest={() => props.makeDetailsRequest(movie.imdbID)}
+            key={gif.id} idx={idx} gif={gif}
           />
         )}
       </ul>
@@ -90,7 +85,7 @@ Results.propTypes = {
   modalOpen: bool.isRequired,
   closeModal: func.isRequired,
   makeDetailsRequest: func.isRequired,
-  movieData: PropTypes.any.isRequired,
+  gifData: PropTypes.any.isRequired,
   modalData: object.isRequired,
 }
 

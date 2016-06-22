@@ -8,18 +8,25 @@ export default class ResultsContainer extends Component {
     this.state = {
       isLoading: true,
       gifData: {},
-      modalOpen: false,
-      modalData: {},
     }
   }
   componentDidMount() {
     this.makeRequest(this.props.routeParams.searchString)
+    window.addEventListener('scroll', this.runOnScroll)
   }
   componentWillReceiveProps(nextProps) {
     this.makeRequest(nextProps.routeParams.searchString)
     this.setState({
       isLoading: true,
     })
+  }
+  runOnScroll() {
+    // eslint wants const even though value is changing ?
+    const scrollPos = document.body.scrollTop + window.innerHeight
+    const bottom = document.body.scrollHeight
+    if (scrollPos >= (bottom * 0.75)) {
+      console.log('Getting close!')
+    }
   }
   makeRequest(searchString) {
     console.log('Here!')
@@ -52,9 +59,6 @@ export default class ResultsContainer extends Component {
           searchString={this.props.routeParams.searchString}
           gifData={this.state.gifData}
           makeDetailsRequest={(movie) => this.makeDetailsRequest(movie)}
-          modalOpen={this.state.modalOpen}
-          closeModal={() => this.closeModal()}
-          modalData={this.state.modalData}
         />
       </div>
     )

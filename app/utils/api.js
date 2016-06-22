@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const baseURL = 'http://api.giphy.com/v1/gifs/search?q='
 const detailURL = 'https://www.omdbapi.com/?i='
-const trailURL = '&api_key=dc6zaTOxFJmzC'
+const trailURL = '&api_key=dc6zaTOxFJmzC&limit=50'
 
 function getGifs(searchString) {
   console.log('Now Here!')

@@ -15,6 +15,7 @@ Fork and clone this repo, run `npm install`, then `npm run start`. You will see 
 ## Todo
 
 - Make gif play on hover.
-- Implement infinite scroll.
+- Trigger more gifs on scroll.
 - Add buttons for trending and random.
+- Facebook/Twitter share
 

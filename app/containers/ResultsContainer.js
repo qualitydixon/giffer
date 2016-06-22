@@ -15,6 +15,12 @@ export default class ResultsContainer extends Component {
   componentDidMount() {
     this.makeRequest(this.props.routeParams.searchString)
   }
+  componentWillReceiveProps(nextProps) {
+    this.makeRequest(nextProps.routeParams.searchString)
+    this.setState({
+      isLoading: true,
+    })
+  }
   makeRequest(searchString) {
     console.log('Here!')
     getGifs(searchString).then((data) => {

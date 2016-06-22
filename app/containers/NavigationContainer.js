@@ -21,7 +21,8 @@ export default class NavigationContainer extends Component {
       searchString: '',
       navCollapse: true,
     })
-    //this.context.router.push(`/results/${this.state.searchString}`)
+    this.context.router.push(`/results/${this.state.searchString}`)
+    console.log(document.documentElement.scrollTop)
   }
   render() {
     return (
@@ -33,4 +34,8 @@ export default class NavigationContainer extends Component {
       />
     )
   }
+}
+
+NavigationContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired,
 }

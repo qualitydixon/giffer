@@ -1,18 +1,8 @@
 import React, { PropTypes } from 'react'
 import Modal from 'react-modal'
+import { customStyles } from '../config/constants.js'
 
 const { object, number, func, bool } = PropTypes
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-}
 
 const bd = {
   fontWeight: 'bold',
@@ -26,7 +16,7 @@ function ListItem(props) {
   const animationDelay = `${2 + (props.idx * 10) / 100}s`
   return (
     <li style={{ animationDelay }} className='card'>
-      <img alt={'Gif'} src={props.gif.images.downsized_still.url} />
+      <img alt={'Gif'} src={props.gif.images.fixed_height.url} />
     </li>
   )
 }

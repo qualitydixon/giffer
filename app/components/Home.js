@@ -11,10 +11,12 @@ export default class Home extends Component {
     }
   }
   componentDidMount() {
-    this.makeRequest()
+    setInterval(this.makeRequest.bind(this), 10000)
   }
   makeRequest() {
+    console.log('check!')
     getRandomGif().then((data) => {
+      console.log(data)
       this.setState({
         currentGif: data,
         isLoading: false,

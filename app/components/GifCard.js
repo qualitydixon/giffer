@@ -12,18 +12,17 @@ export default class GifCard extends Component {
   mouseOver() {
     this.setState({
       isHovered: true,
-      displayURL: this.props.gifURL,
     })
   }
   mouseOut() {
     this.setState({
       isHovered: false,
-      displayURL: this.props.stillURL,
     })
   }
   render() {
     const animationDelay = `${2 + (this.props.idx * 10) / 100}s`
     const isVisible = this.state.isHovered ? 'fadeIn' : 'fadeOut'
+    const displayURL = this.state.isHovered ? this.props.gifURL : this.props.stillURL
     return (
       <li
         onMouseOver={() => this.mouseOver()}
@@ -32,13 +31,13 @@ export default class GifCard extends Component {
         className='card'
       >
         <img
-          alt={this.props.gif.url}
-          src={this.state.displayURL}
+          alt={this.props.gifURL}
+          src={displayURL}
         />
         <a href={shareToTwitter(this.props.shareURL)} target='_blank'>
           <i className={`fa fa-twitter icon twitter ${isVisible}`}></i>
         </a>
-        <a href={shareToFacebook(this.props.gif.shareURL)} target='_blank'>
+        <a href={shareToFacebook(this.props.shareURL)} target='_blank'>
           <i className={`fa fa-facebook icon facebook ${isVisible}`}></i>
         </a>
       </li>
@@ -47,7 +46,6 @@ export default class GifCard extends Component {
 }
 
 GifCard.propTypes = {
-  gif: PropTypes.object.isRequired,
   idx: PropTypes.number.isRequired,
   stillURL: PropTypes.string.isRequired,
   gifURL: PropTypes.string.isRequired,

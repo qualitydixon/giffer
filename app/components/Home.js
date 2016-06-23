@@ -11,12 +11,15 @@ export default class Home extends Component {
     }
   }
   componentDidMount() {
-    setInterval(this.makeRequest.bind(this), 10000)
+    this.makeRequest()
+    this.interval = setInterval(() => this.makeRequest(), 10000)
+  }
+  componentWillUnmount () {
+    clearInterval(this.interval)
   }
   makeRequest() {
     console.log('check!')
     getRandomGif().then((data) => {
-      console.log(data)
       this.setState({
         currentGif: data,
         isLoading: false,
@@ -24,14 +27,14 @@ export default class Home extends Component {
     })
   }
   render() {
+    let randURL = this.state.currentGif.fixed_height_downsampled_url
     return this.state.isLoading === true
     ? <div />
     : <div className='home'>
       <GifCard
-        stillURL={this.state.currentGif.image_url}
-        gifURL={this.state.currentGif.image_url}
-        shareURL={this.state.currentGif.image_url}
-        gif={this.state.currentGif}
+        stillURL={randURL}
+        gifURL={randURL}
+        shareURL={randURL}
         idx={0}
       />
     </div>

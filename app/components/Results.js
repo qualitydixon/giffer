@@ -8,17 +8,20 @@ class ListItem extends Component {
     super(props)
     this.state = {
       isHovered: false,
+      displayURL: this.props.gif.images.fixed_height_still.url,
     }
   }
   mouseOver() {
     console.log('hovered!')
     this.setState({
       isHovered: true,
+      displayURL: this.props.gif.images.fixed_height.url,
     })
   }
   mouseOut() {
     this.setState({
       isHovered: false,
+      displayURL: this.props.gif.images.fixed_height_still.url,
     })
   }
   render() {
@@ -33,7 +36,7 @@ class ListItem extends Component {
       >
         <img
           alt={this.props.gif.url}
-          src={this.props.gif.images.fixed_height.url}
+          src={this.state.displayURL}
         />
         <a href={shareToTwitter(this.props.gif.bitly_gif_url)} target='_blank'>
           <i className={`fa fa-twitter icon twitter ${isVisible}`}></i>

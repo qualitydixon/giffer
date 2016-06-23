@@ -36,6 +36,7 @@ body {
   max-height: 50vh;
   justify-content: center;
   margin-bottom: 10px;
+  z-index: 5;
 }
 
 .navContainer ul {
@@ -51,7 +52,7 @@ body {
 
 .navCollapse {
     max-height: 70px;
-    transition: max-height .5s linear;
+    transition: max-height 1s linear;
 }
 
 .navSearch {
@@ -107,34 +108,11 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   display: inline-block;
   position: relative;
-  align-items: center;
   animation-name: fadeIn;
   animation-duration: 2s; 
   animation-fill-mode: forwards;
   animation-timing-function: linear;
   opacity: 0;
-}
-
-.modalContainer {
-  display: flex;
-}
-
-.modalPoster {
-  margin: 10px;
-}
-
-.modalInfo {
-  width: 20vw;
-}
-
-.loading {
-  font-size: 15vh;
-  color: #F4F4F4;
-  margin-top: 20vh;
-}
-
-.card:hover {
-  cursor: pointer;
 }
 
 .form-control {
@@ -143,11 +121,6 @@ body {
 
 .form-group {  
   text-align: center;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
 }
 
 .icon {

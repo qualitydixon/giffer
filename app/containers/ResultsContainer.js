@@ -11,7 +11,7 @@ export default class ResultsContainer extends Component {
     }
   }
   componentDidMount() {
-    this.makeRequest(this.props.routeParams.searchString, 0)
+    setTimeout(this.makeRequest(this.props.routeParams.searchString, 0), 2000)
     window.addEventListener('scroll', this.runOnScroll(this.props.routeParams.searchString))
   }
   componentWillReceiveProps(nextProps) {
@@ -49,14 +49,12 @@ export default class ResultsContainer extends Component {
   }
   render() {
     return (
-      <div>
-        <Results
-          isLoading={this.state.isLoading}
-          searchString={this.props.routeParams.searchString}
-          gifData={this.state.gifData}
-          makeDetailsRequest={(movie) => this.makeDetailsRequest(movie)}
-        />
-      </div>
+      <Results
+        isLoading={this.state.isLoading}
+        searchString={this.props.routeParams.searchString}
+        gifData={this.state.gifData}
+        makeDetailsRequest={(movie) => this.makeDetailsRequest(movie)}
+      />
     )
   }
 }

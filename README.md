@@ -6,7 +6,7 @@ LIVE DEMO (coming soon)
 
 ## Built with...
 
-This project was made with React, React-Router, React Modal, Webpack, Less, Axios, and Eslint (airbnb).
+This project was made with React, React-Router, React Modal, Webpack, Less, Axios, and ESLint (airbnb).
 
 ## Installation
 
@@ -14,8 +14,9 @@ Fork and clone this repo, run `npm install`, then `npm run start`. You will see 
 
 ## Todo
 
-- Make gif play on hover.
-- Trigger more gifs on scroll.
+- ~~Make gif play on hover.~~
 - Add buttons for trending and random.
+- Add Random Gif to front page.
+- Add Trending Gifs to bottom of results.
 - ~~Facebook/Twitter share~~
 

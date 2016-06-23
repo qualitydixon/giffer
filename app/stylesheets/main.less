@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 
-@background: #354B5E;
-@card_bg: #F4F4F4;
+@background: blue;
+@backgroundImage: url('../img/wall4.png');
 @twitter: #55ACEE;
 @facebook: #3b5998;
 
@@ -21,6 +21,7 @@
 
 body {
   background: @background;
+  background-image: @backgroundImage;
   font-family: @main_font;
   display: flex;
   align-items: center;
@@ -28,7 +29,7 @@ body {
 }
 
 .navContainer {
-  color: #FFFFFF;
+  color: #FFF;
   width: 100%;
   display: flex;
   align-items: center;
@@ -89,7 +90,6 @@ body {
   height: 100vh;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding: 20px;
-  background: @card_bg;
   width: 500px;
   height: auto;
   animation-name: fadeIn;
@@ -121,6 +121,7 @@ body {
 
 .form-group {  
   text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .icon {

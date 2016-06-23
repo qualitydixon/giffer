@@ -1,58 +1,7 @@
-import React, { PropTypes, Component } from 'react'
-import { shareToTwitter, shareToFacebook } from '../utils/helpers'
+import React, { PropTypes } from 'react'
+import GifCard from './GifCard'
 
-const { object, number, func, bool } = PropTypes
-
-class ListItem extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isHovered: false,
-      displayURL: this.props.gif.images.fixed_height_still.url,
-    }
-  }
-  mouseOver() {
-    console.log('hovered!')
-    this.setState({
-      isHovered: true,
-      displayURL: this.props.gif.images.fixed_height.url,
-    })
-  }
-  mouseOut() {
-    this.setState({
-      isHovered: false,
-      displayURL: this.props.gif.images.fixed_height_still.url,
-    })
-  }
-  render() {
-    const animationDelay = `${2 + (this.props.idx * 10) / 100}s`
-    const isVisible = this.state.isHovered ? 'fadeIn' : 'fadeOut'
-    return (
-      <li
-        onMouseOver={() => this.mouseOver()}
-        onMouseOut={() => this.mouseOut()}
-        style={{ animationDelay }}
-        className='card'
-      >
-        <img
-          alt={this.props.gif.url}
-          src={this.state.displayURL}
-        />
-        <a href={shareToTwitter(this.props.gif.bitly_gif_url)} target='_blank'>
-          <i className={`fa fa-twitter icon twitter ${isVisible}`}></i>
-        </a>
-        <a href={shareToFacebook(this.props.gif.bitly_gif_url)} target='_blank'>
-          <i className={`fa fa-facebook icon facebook ${isVisible}`}></i>
-        </a>
-      </li>
-    )
-  }
-}
-
-ListItem.propTypes = {
-  gif: object.isRequired,
-  idx: number.isRequired,
-}
+const { array, func, bool } = PropTypes
 
 export default function Results(props) {
   return props.isLoading === true
@@ -60,7 +9,7 @@ export default function Results(props) {
     : <div>
       <ul className='list'>
         {props.gifData.map((gif, idx) =>
-          <ListItem
+          <GifCard
             key={gif.id} idx={idx} gif={gif}
           />
         )}
@@ -71,6 +20,6 @@ export default function Results(props) {
 Results.propTypes = {
   isLoading: bool.isRequired,
   makeDetailsRequest: func.isRequired,
-  gifData: PropTypes.array.isRequired,
+  gifData: array.isRequired,
 }
 

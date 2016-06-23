@@ -10,7 +10,9 @@ export default function Results(props) {
       <ul className='list'>
         {props.gifData.map((gif, idx) =>
           <GifCard
-            url={gif.images.fixed_height_still.url}
+            stillURL={gif.images.fixed_height_still.url}
+            gifURL={gif.images.fixed_height.url}
+            shareURL={gif.bitly_gif_url}
             key={gif.id}
             idx={idx}
             gif={gif}

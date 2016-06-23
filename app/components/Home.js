@@ -24,9 +24,11 @@ export default class Home extends Component {
   render() {
     return this.state.isLoading === true
     ? <div />
-    : <div>
+    : <div className='home'>
       <GifCard
-        url={this.state.currentGif.image_url}
+        stillURL={this.state.currentGif.image_url}
+        gifURL={this.state.currentGif.image_url}
+        shareURL={this.state.currentGif.image_url}
         gif={this.state.currentGif}
         idx={0}
       />

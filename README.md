@@ -17,5 +17,5 @@ Fork and clone this repo, run `npm install`, then `npm run start`. You will see 
 - Make gif play on hover.
 - Trigger more gifs on scroll.
 - Add buttons for trending and random.
-- Facebook/Twitter share
+- ~~Facebook/Twitter share~~
 

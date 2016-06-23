@@ -2,6 +2,8 @@
 
 @background: #354B5E;
 @card_bg: #F4F4F4;
+@twitter: #55ACEE;
+@facebook: #3b5998;
 
 @poster_width: 150px;
 @poster_height: 225px;
@@ -12,22 +14,17 @@
   to {opacity: 1;}
 }
 
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
 body {
   background: @background;
   font-family: @main_font;
   display: flex;
   align-items: center;
-  justify-content: center;
-       
-}
-
-h2 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-.title {
-  height: 50px;
+  justify-content: center;      
 }
 
 .navContainer {
@@ -72,12 +69,6 @@ h2 {
   text-decoration: none;  
 }
 
-.icon {
-  font-size: 28px;
-  color: #FFFFFF;
-  margin-top: 5px;
-}
-
 .title {
   margin-left: 10px;
 }
@@ -114,7 +105,8 @@ h2 {
   margin: 5px;
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  display: flex;
+  display: inline-block;
+  position: relative;
   align-items: center;
   animation-name: fadeIn;
   animation-duration: 2s; 
@@ -158,12 +150,43 @@ h2 {
   flex-direction: column;
 }
 
-.getBtn {
-  width: 300px;
+.icon {
+  border-radius: 3px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-.listPoster {
-  width: @poster_width;
-  height: @poster_height;
-  margin: 5px;
+.twitter {
+  background: @twitter;
+  bottom: 5px;
+  right: 5px;
+  opacity: 0;
+}
+
+.facebook {
+  background: @facebook;
+  bottom: 5px;
+  right: 40px;
+  opacity: 0;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: .5s; 
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }

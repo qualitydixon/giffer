@@ -12,7 +12,7 @@ export default class ResultsContainer extends Component {
   }
   componentDidMount() {
     this.makeRequest(this.props.routeParams.searchString, 0)
-    window.addEventListener('scroll', this.runOnScroll)
+    window.addEventListener('scroll', this.runOnScroll(this.props.routeParams.searchString))
   }
   componentWillReceiveProps(nextProps) {
     this.makeRequest(nextProps.routeParams.searchString, 0)
@@ -20,13 +20,15 @@ export default class ResultsContainer extends Component {
       isLoading: true,
     })
   }
-  runOnScroll() {
+  runOnScroll(searchString) {
+    console.log(searchString)
     // eslint wants const even though value is changing ?
     const scrollPos = document.body.scrollTop + window.innerHeight
     console.log(scrollPos)
     const bottom = document.body.scrollHeight
-    if (scrollPos >= (bottom * 0.75)) {
+    if (scrollPos >= (bottom * 0.95)) {
       console.log('Getting close!')
+      this.makeRequest(searchString, 51)
     }
   }
   makeRequest(searchString, offset) {

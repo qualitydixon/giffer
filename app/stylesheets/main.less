@@ -5,7 +5,7 @@
 @twitter: #55ACEE;
 @facebook: #3b5998;
 
-@slideLength: 100px;
+@slideLength: 45vh;
 
 @poster_width: 150px;
 @poster_height: 225px;
@@ -24,8 +24,11 @@
 body {
   background: @background;
   background-image: @backgroundImage;
-  font-family: @main_font;
-  border: 5px solid red;    
+  font-family: @main_font; 
+}
+
+.main {
+    height: 100%;
 }
 
 .navContainer {
@@ -33,7 +36,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  border: 5px solid red;
 }
 
 .navContainer ul {
@@ -51,8 +53,11 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  animation-name: fadeIn;
-  animation-duration: 1s;
+  animation-name: fadeInOut;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  margin-top: 50vh;
 }
 
 .list {
@@ -130,7 +135,26 @@ body {
   -webkit-transform: translateY(@slideLength); /* Safari and Chrome */
 }
 
-.slide:hover {
-  transform: translateY(0px);
-  -webkit-transform: translateY(0px); /* Safari and Chrome */
+.return {
+  transition: all 1s ease-out;
+  transform: translateY(5px);
+  -webkit-transform: translateY(5px); /* Safari and Chrome */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }

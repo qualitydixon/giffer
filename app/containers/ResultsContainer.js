@@ -11,7 +11,7 @@ export default class ResultsContainer extends Component {
     }
   }
   componentDidMount() {
-    setTimeout(this.makeRequest(this.props.routeParams.searchString, 0), 2000)
+    this.makeRequest(this.props.routeParams.searchString, 0)
   }
   componentWillReceiveProps(nextProps) {
     this.makeRequest(nextProps.routeParams.searchString, 0)

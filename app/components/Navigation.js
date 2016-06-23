@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 export default function Navigation(props) {
-  let className = `navContainer ${props.navCollapse ? 'navCollapse' : ''}`
+  let className = `navContainer ${props.navCollapse ? 'return' : 'slide'}`
   return (
     <div className={className}>
       <div className='navSearch'>

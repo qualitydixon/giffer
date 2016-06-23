@@ -5,6 +5,8 @@
 @twitter: #55ACEE;
 @facebook: #3b5998;
 
+@slideLength: 100px;
+
 @poster_width: 150px;
 @poster_height: 225px;
 @main_font: Roboto;
@@ -23,20 +25,15 @@ body {
   background: @background;
   background-image: @backgroundImage;
   font-family: @main_font;
-  display: flex;
-  align-items: center;
-  justify-content: center;      
+  border: 5px solid red;    
 }
 
 .navContainer {
   color: #FFF;
   width: 100%;
   display: flex;
-  align-items: center;
-  height: 45vh;
-  max-height: 45vh;
   justify-content: center;
-  margin-bottom: 10px;
+  border: 5px solid red;
 }
 
 .navContainer ul {
@@ -50,43 +47,12 @@ body {
   padding: 0 10px;
 }
 
-.navCollapse {
-    max-height: 70px;
-    transition: max-height 1s linear;
-}
-
-.navSearch {
-  align-self: flex-end;
-}
-
-.link {
-  text-decoration: none;
-  font-size: 20px;
-  align-self: center;
-  color: white;
-}
-
-.link:hover {
-  text-decoration: none;  
-}
-
-.title {
-  margin-left: 10px;
-}
-
-.homeContainer {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-}
-
 .home {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
+  align-items: flex-end;
+  justify-content: center;
   animation-name: fadeIn;
-  animation-duration: 1s; 
+  animation-duration: 1s;
 }
 
 .list {
@@ -156,4 +122,15 @@ body {
   animation-duration: .5s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
+}
+
+.slide {
+  transition: all 1s ease-out;
+  transform: translateY(@slideLength);
+  -webkit-transform: translateY(@slideLength); /* Safari and Chrome */
+}
+
+.slide:hover {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px); /* Safari and Chrome */
 }

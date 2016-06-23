@@ -6,7 +6,6 @@ export default class GifCard extends Component {
     super(props)
     this.state = {
       isHovered: false,
-      displayURL: this.props.stillURL,
     }
   }
   mouseOver() {
@@ -21,14 +20,15 @@ export default class GifCard extends Component {
   }
   render() {
     const animationDelay = `${2 + (this.props.idx * 10) / 100}s`
-    const isVisible = this.state.isHovered ? 'fadeIn' : 'fadeOut'
-    const displayURL = this.state.isHovered ? this.props.gifURL : this.props.stillURL
+    let isVisible = this.state.isHovered ? 'fadeIn' : 'fadeOut'
+    let displayURL = this.state.isHovered ? this.props.gifURL : this.props.stillURL
+    let enlarge = this.state.isHovered ? 'enlarge' : ''
     return (
       <li
         onMouseOver={() => this.mouseOver()}
         onMouseOut={() => this.mouseOut()}
         style={{ animationDelay }}
-        className='card'
+        className={`card ${enlarge}`}
       >
         <img
           alt={this.props.gifURL}

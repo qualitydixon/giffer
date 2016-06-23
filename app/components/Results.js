@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import GifCard from './GifCard'
 
-const { array, func, bool } = PropTypes
+const { array, bool } = PropTypes
 
 export default function Results(props) {
   return props.isLoading === true
@@ -10,7 +10,10 @@ export default function Results(props) {
       <ul className='list'>
         {props.gifData.map((gif, idx) =>
           <GifCard
-            key={gif.id} idx={idx} gif={gif}
+            url={gif.images.fixed_height_still.url}
+            key={gif.id}
+            idx={idx}
+            gif={gif}
           />
         )}
       </ul>
@@ -19,7 +22,6 @@ export default function Results(props) {
 
 Results.propTypes = {
   isLoading: bool.isRequired,
-  makeDetailsRequest: func.isRequired,
   gifData: array.isRequired,
 }
 

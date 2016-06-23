@@ -6,11 +6,10 @@ export default class GifCard extends Component {
     super(props)
     this.state = {
       isHovered: false,
-      displayURL: this.props.gif.images.fixed_height_still.url,
+      displayURL: this.props.url,
     }
   }
   mouseOver() {
-    console.log('hovered!')
     this.setState({
       isHovered: true,
       displayURL: this.props.gif.images.fixed_height.url,
@@ -50,4 +49,5 @@ export default class GifCard extends Component {
 GifCard.propTypes = {
   gif: PropTypes.object.isRequired,
   idx: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
 }

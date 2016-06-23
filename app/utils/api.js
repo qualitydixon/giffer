@@ -2,8 +2,9 @@ import axios from 'axios'
 
 const baseURL = 'http://api.giphy.com/v1/gifs/search?q='
 const trailURL = '&api_key=dc6zaTOxFJmzC&limit=50&offset='
+const randomURL = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC'
 
-function getGifs(searchString, offset) {
+export function getGifs(searchString, offset) {
   console.log('Now Here!')
   return axios.get(baseURL + searchString + trailURL + offset)
           .then(gifs => gifs.data.data)
@@ -12,11 +13,7 @@ function getGifs(searchString, offset) {
           })
 }
 
-function getDetails(id) {
-  return axios.get(detailURL + id + trailURL)
-          .then((movie) => movie.data)
-}
-module.exports = {
-  getGifs,
-  getDetails,
+export function getRandomGif() {
+  return axios.get(randomURL)
+          .then((gif) => gif.data.data)
 }

@@ -7,15 +7,15 @@ export default class ResultsContainer extends Component {
     super(props)
     this.state = {
       isLoading: true,
-      gifData: {},
+      gifData: [],
     }
   }
   componentDidMount() {
-    this.makeRequest(this.props.routeParams.searchString)
+    this.makeRequest(this.props.routeParams.searchString, 0)
     window.addEventListener('scroll', this.runOnScroll)
   }
   componentWillReceiveProps(nextProps) {
-    this.makeRequest(nextProps.routeParams.searchString)
+    this.makeRequest(nextProps.routeParams.searchString, 0)
     this.setState({
       isLoading: true,
     })
@@ -23,19 +23,18 @@ export default class ResultsContainer extends Component {
   runOnScroll() {
     // eslint wants const even though value is changing ?
     const scrollPos = document.body.scrollTop + window.innerHeight
+    console.log(scrollPos)
     const bottom = document.body.scrollHeight
     if (scrollPos >= (bottom * 0.75)) {
       console.log('Getting close!')
     }
   }
-  makeRequest(searchString) {
-    console.log('Here!')
-    getGifs(searchString).then((data) => {
+  makeRequest(searchString, offset) {
+    getGifs(searchString, offset).then((data) => {
       this.setState({
-        gifData: data,
+        gifData: this.state.gifData.concat(data),
         isLoading: false,
       })
-      console.log(data)
     })
   }
   makeDetailsRequest(movie) {
@@ -44,11 +43,6 @@ export default class ResultsContainer extends Component {
         modalOpen: true,
         modalData: data,
       })
-    })
-  }
-  closeModal() {
-    this.setState({
-      modalOpen: false,
     })
   }
   render() {

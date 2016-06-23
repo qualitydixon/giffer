@@ -33,6 +33,6 @@ export default function Results(props) {
 Results.propTypes = {
   isLoading: bool.isRequired,
   makeDetailsRequest: func.isRequired,
-  gifData: PropTypes.any.isRequired,
+  gifData: PropTypes.array.isRequired,
 }
 

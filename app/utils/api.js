@@ -1,12 +1,11 @@
 import axios from 'axios'
 
 const baseURL = 'http://api.giphy.com/v1/gifs/search?q='
-const detailURL = 'https://www.omdbapi.com/?i='
-const trailURL = '&api_key=dc6zaTOxFJmzC&limit=50'
+const trailURL = '&api_key=dc6zaTOxFJmzC&limit=30&offset='
 
-function getGifs(searchString) {
+function getGifs(searchString, offset) {
   console.log('Now Here!')
-  return axios.get(baseURL + searchString + trailURL)
+  return axios.get(baseURL + searchString + trailURL + offset)
           .then(gifs => gifs.data.data)
           .catch((error) => {
             console.log(error)

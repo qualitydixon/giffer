@@ -38,7 +38,7 @@ Very few.  This is your chance to explore.
 
 ## Bonus
 - Deploy your app on Heroku to share a link with us
-..* Deployed to gh-pages
+  * Deployed to gh-pages
 - Use audio in the app
 - Use another API for added features of your app
 - Make it work on IE9

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
 export default function Navigation(props) {
-  let className = `${props.navCollapse ? 'slideReturn' : 'slide'}`
+  let className = props.navCollapse ? 'slideReturn' : 'slide'
   return (
     <div className='navContainer'>
       <div />

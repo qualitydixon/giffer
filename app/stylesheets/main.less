@@ -38,10 +38,10 @@ h3 {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin-top: 50vh;
   animation-name: fadeInOut;
   animation-duration: 10s;
   animation-iteration-count: infinite;
-  margin-top: 50vh;
 }
 
 .trending {
@@ -72,7 +72,7 @@ h3 {
 
 .form-control {
   width: 30vw;
-  min-width: 300px;
+  min-width: 500px;
   height: 7vh;
   max-height: 50px;
 }
@@ -90,17 +90,19 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #FFF;
   position: absolute;
   box-shadow: @boxShadow;
 }
 
 .trendIcon {
   color: @grey;
-  z-index: 2;
   font-size: 2vw;
   text-shadow: 3px 3px 3px @greyShadow;
-  margin-right: 15px;
+  z-index: 2;
+  position: absolute;
+  top: 5px;
+  right: 10px;
   .enlargeReturn;
 
   &:hover {
@@ -131,7 +133,7 @@ h3 {
 
 .fadeIn {
   animation-name: fadeIn;
-  animation-duration: 1.5s; 
+  animation-duration: 2s; 
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -143,7 +145,7 @@ h3 {
 }
 
 .slideReturn {
-  transition: all 1s ease-out;
+  transition: all 0.75s ease-out;
   transform: translateY(5px);
   -webkit-transform: translateY(5px); /* Safari and Chrome */
 }

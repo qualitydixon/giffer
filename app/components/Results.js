@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react'
 import GifCard from './GifCard'
 
-const { array, bool } = PropTypes
-
 export default function Results(props) {
   return props.isLoading === true
     ? <div />
@@ -24,7 +22,7 @@ export default function Results(props) {
 }
 
 Results.propTypes = {
-  isLoading: bool.isRequired,
-  gifData: array.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  gifData: PropTypes.array.isRequired,
 }
 

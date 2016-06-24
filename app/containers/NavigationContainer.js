@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Navigation from '../components/Navigation'
-import { Link } from 'react-router'
 
 export default class NavigationContainer extends Component {
   constructor(props) {

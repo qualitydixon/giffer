@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react'
 import Results from '../components/Results'
-import Trending from '../components/Trending'
 import { getGifs } from '../utils/api'
 
 export default class ResultsContainer extends Component {

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import NavigationContainer from './NavigationContainer'
 require('../stylesheets/main.less')
 
-function MainContainer(props) {
+export default function MainContainer(props) {
   return (
     <div>
       <NavigationContainer />
@@ -14,4 +14,3 @@ function MainContainer(props) {
 MainContainer.propTypes = {
   children: PropTypes.node.isRequired,
 }
-module.exports = MainContainer

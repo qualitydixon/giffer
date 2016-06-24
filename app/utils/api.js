@@ -3,14 +3,11 @@ import axios from 'axios'
 const baseURL = 'https://api.giphy.com/v1/gifs/search?q='
 const trailURL = '&api_key=dc6zaTOxFJmzC&limit=50&offset='
 const randomURL = 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC'
-const trendURL = 'https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=5'
+const trendURL = 'https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC'
 
 export function getGifs(searchString, offset) {
   return axios.get(baseURL + searchString + trailURL + offset)
           .then(gifs => gifs.data.data)
-          .catch((error) => {
-            console.log(error)
-          })
 }
 
 export function getRandomGif() {

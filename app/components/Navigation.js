@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
 export default function Navigation(props) {
-  let className = `navContainer ${props.navCollapse ? 'return' : 'slide'}`
+  let className = `${props.navCollapse ? 'slideReturn' : 'slide'}`
   return (
-    <div className={className}>
-      <div className='navSearch'>
+    <div className='navContainer'>
+      <div />
+      <div className={className}>
         <form onSubmit={props.onSubmitSearchString}>
           <div className='form-group' id='inputBox'>
             <input
@@ -17,6 +19,9 @@ export default function Navigation(props) {
           </div>
         </form>
       </div>
+      <Link to='/trending' onClick={props.onRouteLink}>
+        <i className={'fa fa-line-chart trendIcon'}></i>
+      </Link>
     </div>
   )
 }
@@ -24,6 +29,7 @@ export default function Navigation(props) {
 Navigation.propTypes = {
   onSubmitSearchString: PropTypes.func.isRequired,
   onUpdateSearchString: PropTypes.func.isRequired,
+  onRouteLink: PropTypes.func.isRequired,
   searchString: PropTypes.string.isRequired,
   navCollapse: PropTypes.bool.isRequired,
 }

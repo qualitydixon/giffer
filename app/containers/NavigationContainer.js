@@ -22,13 +22,18 @@ export default class NavigationContainer extends Component {
       navCollapse: true,
     })
     this.context.router.push(`/results/${this.state.searchString}`)
-    console.log(document.documentElement.scrollTop)
+  }
+  handleRouteLink() {
+    this.setState({
+      navCollapse: true,
+    })
   }
   render() {
     return (
       <Navigation
         onSubmitSearchString={(e) => this.handleSubmitSearchString(e)}
         onUpdateSearchString={(e) => this.handleUpdateSearchString(e)}
+        onRouteLink={() => this.handleRouteLink()}
         searchString={this.state.searchString}
         navCollapse={this.state.navCollapse}
       />

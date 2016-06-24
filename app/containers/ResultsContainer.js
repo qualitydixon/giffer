@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import Results from '../components/Results'
 import Trending from '../components/Trending'
-import { getGifs, getTrendingGifs } from '../utils/api'
+import { getGifs } from '../utils/api'
 
 export default class ResultsContainer extends Component {
   constructor(props) {
@@ -29,13 +29,6 @@ export default class ResultsContainer extends Component {
           isLoading: false,
         })
       })
-
-    getTrendingGifs()
-      .then((data) => {
-        this.setState({
-          trendingData: data,
-        })
-      })
   }
   render() {
     return (
@@ -45,7 +38,6 @@ export default class ResultsContainer extends Component {
           searchString={this.props.routeParams.searchString}
           gifData={this.state.gifData}
         />
-        <Trending trendingData={this.state.trendingData} />
       </div>
     )
   }

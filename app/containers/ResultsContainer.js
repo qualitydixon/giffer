@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import Results from '../components/Results'
-import { getGifs } from '../utils/api'
+import Trending from '../components/Trending'
+import { getGifs, getTrendingGifs } from '../utils/api'
 
 export default class ResultsContainer extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ export default class ResultsContainer extends Component {
     this.state = {
       isLoading: true,
       gifData: [],
+      trendingData: [],
     }
   }
   componentDidMount() {
@@ -20,20 +22,31 @@ export default class ResultsContainer extends Component {
     })
   }
   makeRequest(searchString, offset) {
-    getGifs(searchString, offset).then((data) => {
-      this.setState({
-        gifData: data,
-        isLoading: false,
+    getGifs(searchString, offset)
+      .then((data) => {
+        this.setState({
+          gifData: data,
+          isLoading: false,
+        })
       })
-    })
+
+    getTrendingGifs()
+      .then((data) => {
+        this.setState({
+          trendingData: data,
+        })
+      })
   }
   render() {
     return (
-      <Results
-        isLoading={this.state.isLoading}
-        searchString={this.props.routeParams.searchString}
-        gifData={this.state.gifData}
-      />
+      <div>
+        <Results
+          isLoading={this.state.isLoading}
+          searchString={this.props.routeParams.searchString}
+          gifData={this.state.gifData}
+        />
+        <Trending trendingData={this.state.trendingData} />
+      </div>
     )
   }
 }

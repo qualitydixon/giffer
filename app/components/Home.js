@@ -14,11 +14,10 @@ export default class Home extends Component {
     this.makeRequest()
     this.interval = setInterval(() => this.makeRequest(), 10000)
   }
-  componentWillUnmount () {
+  componentWillUnmount() {
     clearInterval(this.interval)
   }
   makeRequest() {
-    console.log('check!')
     getRandomGif().then((data) => {
       this.setState({
         currentGif: data,
@@ -35,6 +34,7 @@ export default class Home extends Component {
         stillURL={randURL}
         gifURL={randURL}
         shareURL={randURL}
+        pageURL={this.state.currentGif.url}
         idx={0}
       />
     </div>

@@ -2,7 +2,7 @@
 
 ![alt text](http://g.recordit.co/l2KyKlTR8q.gif "Star Wars")
 
-LIVE DEMO (coming soon)
+[LIVE DEMO](https://qualitydixon.github.io/giffer/)
 
 ## Built with...
 
@@ -16,7 +16,9 @@ Fork and clone this repo, run `npm install`, then `npm run start`. You will see 
 
 - ~~Make gif play on hover.~~
 - Add buttons for trending and random.
-- Add Random Gif to front page.
+- ~~Add Random Gif to front page.~~
 - Add Trending Gifs to bottom of results.
 - ~~Facebook/Twitter share~~
+- Code cleanup.
+- set onclick to send user to gif's giphy page.
 

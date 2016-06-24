@@ -4,6 +4,8 @@
 @backgroundImage: url('../img/wall4.png');
 @twitter: #55ACEE;
 @facebook: #3b5998;
+@grey: #898989;
+@greyShadow: #D9D9D9;
 
 @slideLength: 45vh;
 
@@ -15,10 +17,6 @@ body {
   background: @background;
   background-image: @backgroundImage;
   font-family: @main_font; 
-}
-
-.main {
-    height: 100%;
 }
 
 .navContainer {
@@ -47,6 +45,18 @@ body {
   animation-duration: 10s;
   animation-iteration-count: infinite;
   margin-top: 50vh;
+}
+
+.trending {
+  text-align: center;
+  font-weight: bold;
+  color: @grey;
+  margin-bottom: 50px;
+  text-shadow: 1px 1px 1px @greyShadow;
+}
+
+hr {
+  height: 20px;
 }
 
 .list {

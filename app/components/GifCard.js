@@ -30,10 +30,12 @@ export default class GifCard extends Component {
         style={{ animationDelay }}
         className={`card ${enlarge}`}
       >
-        <img
-          alt={this.props.gifURL}
-          src={displayURL}
-        />
+        <a href={this.props.pageURL} target='_blank'>
+          <img
+            alt={this.props.gifURL}
+            src={displayURL}
+          />
+        </a>
         <a href={shareToTwitter(this.props.shareURL)} target='_blank'>
           <i className={`fa fa-twitter icon twitter ${isVisible}`}></i>
         </a>
@@ -50,4 +52,5 @@ GifCard.propTypes = {
   stillURL: PropTypes.string.isRequired,
   gifURL: PropTypes.string.isRequired,
   shareURL: PropTypes.string.isRequired,
+  pageURL: PropTypes.string.isRequired,
 }

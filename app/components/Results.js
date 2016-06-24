@@ -13,6 +13,7 @@ export default function Results(props) {
             stillURL={gif.images.fixed_height_still.url}
             gifURL={gif.images.fixed_height.url}
             shareURL={gif.bitly_gif_url}
+            pageURL={gif.url}
             key={gif.id}
             idx={idx}
             gif={gif}

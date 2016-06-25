@@ -25,7 +25,7 @@ Fork and clone this repo, run `npm install`, then `npm run start`. You will see 
 - Would another developer be able to easily jump into your code to make updates?
   * **I think so but I suppose code is always readable to the person who wrote it. I'd be interested to hear someone else's opinion.**
 - Are there parts of the code that should be documented or does the code speak for itself?
-  * **I make an effort to make my code 'self-documenting'. Using React helps with this a lot.**
+  * **I make an effort to write code that's self-documenting. Using React helps with this a lot.**
 
 ## Bonus
 - Deploy your app on Heroku to share a link with us

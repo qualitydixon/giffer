@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react'
 import GifCard from './GifCard'
 
+/*
+  Takes in an array of gifs and generates GifCards.
+*/
 export default function Results(props) {
   return props.isLoading === true
     ? <div />

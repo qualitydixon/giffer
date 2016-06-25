@@ -20,6 +20,10 @@ export default class ResultsContainer extends Component {
       isLoading: true,
     })
   }
+  /*
+    You could pass in an offset for pagination purposes.
+    Not currently implemented i.e. offset is always 0.
+  */
   makeRequest(searchString, offset) {
     getGifs(searchString, offset)
       .then((data) => {

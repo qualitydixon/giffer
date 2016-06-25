@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
+/*
+  Contains search form and link to trending route.
+*/
 export default function Navigation(props) {
   let className = props.navCollapse ? 'slideReturn' : 'slide'
   return (

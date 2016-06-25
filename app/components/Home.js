@@ -11,7 +11,10 @@ export default class Home extends Component {
     }
   }
   componentDidMount() {
+    /* Get first random gif */
     this.makeRequest()
+
+    /* Get a new random gif every 10 seconds */
     this.interval = setInterval(() => this.makeRequest(), 10000)
   }
   componentWillUnmount() {

@@ -1,6 +1,9 @@
 import React, { PropTypes, Component } from 'react'
 import { shareToTwitter, shareToFacebook } from '../utils/helpers'
 
+/*
+  GifBtn is used to generate the buttons for sharing to facebook/twitter and to go to the gif's giphy pageURL
+*/
 const GifBtn = ({ link, animation, iconType }) =>
   <a href={link} target='_blank'>
     <i className={`icon fa fa-${iconType} ${iconType} ${animation}`}></i>
@@ -45,9 +48,21 @@ export default class GifCard extends Component {
           alt={this.props.gifURL}
           src={displayURL}
         />
-        <GifBtn animation={animation} iconType={'external-link'} link={this.props.pageURL} />
-        <GifBtn animation={animation} iconType={'twitter'} link={shareToTwitter(this.props.shareURL)} />
-        <GifBtn animation={animation} iconType={'facebook'} link={shareToFacebook(this.props.shareURL)} />
+        <GifBtn
+          animation={animation}
+          iconType={'external-link'}
+          link={this.props.pageURL}
+        />
+        <GifBtn
+          animation={animation}
+          iconType={'twitter'}
+          link={shareToTwitter(this.props.shareURL)}
+        />
+        <GifBtn
+          animation={animation}
+          iconType={'facebook'}
+          link={shareToFacebook(this.props.shareURL)}
+        />
       </li>
     )
   }

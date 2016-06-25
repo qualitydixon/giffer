@@ -23,7 +23,7 @@ Fork and clone this repo, run `npm install`, then `npm run start`. You will see 
 - Can parts of the app be built so they could be easily reused in future projects?
   * **Yes. I recycled components from previous projects and the same could be done here.**
 - Would another developer be able to easily jump into your code to make updates?
-  * **I think so but I guess the code is always readable to the person who wrote it. I'd be interested to hear someone else's opinion.**
+  * **I think so but I suppose code is always readable to the person who wrote it. I'd be interested to hear someone else's opinion.**
 - Are there parts of the code that should be documented or does the code speak for itself?
   * **I make an effort to make my code 'self-documenting'. Using React helps with this a lot.**
 
